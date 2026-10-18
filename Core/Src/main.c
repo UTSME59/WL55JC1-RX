@@ -25,7 +25,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "telemetry_tx.h"
+#include "telemetry_rx.h"
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -93,8 +94,7 @@ int main(void)
   MX_SPI1_Init();
   MX_SubGHz_Phy_Init();
   /* USER CODE BEGIN 2 */
-  Telemetry_TX_Init();
-
+  printf("\n\n");
   /* USER CODE END 2 */
 
   /* Infinite loop */
