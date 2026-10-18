@@ -26,6 +26,7 @@
 
 /* USER CODE BEGIN Includes */
 #include "radio_service.h"
+#include "telemetry_rx.h"
 /* USER CODE END Includes */
 
 /* External variables ---------------------------------------------------------*/
@@ -107,6 +108,7 @@ void SubghzApp_Init(void)
   Radio.Init(&RadioEvents);
 
   /* USER CODE BEGIN SubghzApp_Init_2 */
+  Telemetry_RX_Init();
   Radio_Init();
   /* USER CODE END SubghzApp_Init_2 */
 }
@@ -119,26 +121,26 @@ void SubghzApp_Init(void)
 static void OnTxDone(void)
 {
   /* USER CODE BEGIN OnTxDone */
-  Radio_TxDone();
   /* USER CODE END OnTxDone */
 }
 
 static void OnRxDone(uint8_t *payload, uint16_t size, int16_t rssi, int8_t LoraSnr_FskCfo)
 {
   /* USER CODE BEGIN OnRxDone */
+  Radio_RxDone(payload, size, rssi, LoraSnr_FskCfo);
   /* USER CODE END OnRxDone */
 }
 
 static void OnTxTimeout(void)
 {
   /* USER CODE BEGIN OnTxTimeout */
-  Radio_TxTimeout();
   /* USER CODE END OnTxTimeout */
 }
 
 static void OnRxTimeout(void)
 {
   /* USER CODE BEGIN OnRxTimeout */
+  Radio_RxTimeout();
   /* USER CODE END OnRxTimeout */
 }
 

@@ -77,8 +77,7 @@ typedef enum
 {
   CFG_SEQ_Task_SubGHz_Phy_App_Process,
   /* USER CODE BEGIN CFG_SEQ_Task_Id_t */
-  CFG_SEQ_Task_LED_BLINK,
-  CFG_SEQ_Task_CAN_RX,
+  CFG_Seq_Task_RADIO_RX,
   /* USER CODE END CFG_SEQ_Task_Id_t */
   CFG_SEQ_Task_NBR
 } CFG_SEQ_Task_Id_t;
